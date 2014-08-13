@@ -1,0 +1,59 @@
+<div ng-controller="AdminCharteCtrl">
+    <div class="add-file-select">
+    <input type="file" nv-file-select="" uploader="uploader" ng-click="uploader.clearQueue()" />
+
+    
+    </div>
+    <div class="add-file-content" >
+
+                    <h3>Image du bandeau supérieur </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="'50%">Bandeau Avant</th>
+								<th width="50%">Bandeau Après (dimension requise: 4745x765px, format jpg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  >
+                                <td>
+									<img alt="" src="/fingertips/app/img/chartes/bandeau1.jpg" height="40%" />
+								</td>
+                                <td>
+									<div ng-repeat="item in uploader.queue | filter:$index == ( uploader.queue.length-1)">
+<!--									<img alt="" src="{{uploader.file.c}}" height="20%" width="18%" />-->
+										<div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }">
+										</div>
+										<strong>{{ item.file.name }}</strong>
+								                                   <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Enlever
+                                    </button>
+  							<div class="progress" style="margin-bottom: 0;">
+                                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                    </div>
+
+									</div>										
+								</td>
+							</tr>
+							<tr>
+                                <td nowrap>
+
+                                </td>
+								<td>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+</div>
+
+<div class="add-file-select">
+<a href="" ng-click="goMenu()" >Retour</a>
+</div>

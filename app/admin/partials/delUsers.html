@@ -1,0 +1,31 @@
+<div ng-controller="DelUsersCtrl">
+                        <table class="table">
+                        <thead>
+                            <tr>
+                                <th >Login</th>
+								<th >Mail</th>
+								<th>Type</th>
+                                 <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in users">
+                                <td width="30%">
+									<strong>{{ user.login }}</strong><br>
+                               </td>
+							   <td width="40%"> <strong>{{ user.mail }}</strong><br>
+							   </td>
+							   <td>
+								<strong ng-if="user.type==0">Client</strong>
+								<strong ng-if="user.type==1">Administrateur</strong>
+							   </td>
+                                <td nowrap>
+                                    <button type="button" class="btn btn-danger btn-xs"  ng-click="removeUser(index )" ng-confirm-click="Vous souhaitez supprimer l'utiisateur  {{user.login}}  ">
+                                        <span class=" glyphicon-trash"></span> Supprimer
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+</div>
+<a href ng-click="goMenu()" >Retour</a>

@@ -1,0 +1,27 @@
+<?php 
+
+require 'api.php';
+if ( !empty( $_FILES ) ) {
+
+    $tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
+    //$uploadPath = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $_FILES[ 'file' ][ 'name' ];
+    $api = new API();
+	//echo $api->img_base.' Base';
+	$uploadPath =  "/opt/lampp/htdocs/fingertips/app/img/slides/vitrine/".$_FILES[ 'file' ][ 'name' ];
+	move_uploaded_file( $tempPath, $uploadPath );
+    {
+        $serverPath="img/slides/vitrine/".$_FILES[ 'file' ][ 'name' ];
+       
+        $api->setSlides($serverPath);
+    }
+    $answer = array( 'answer' => 'File transfer completed' );
+    $json = json_encode( $answer );
+
+    echo $json;
+
+} else {
+
+    echo 'No files';
+
+}
+?>

@@ -1,0 +1,53 @@
+<div>
+        <div class="top-ecran">
+
+        </div>
+    <div  class="ecran">
+<table>
+    <tr> 
+        <td style=" width: 45%; vertical-align: auto;">
+            <div   class="gridStyle" ng-grid="gridOptions"   >
+                
+            </div>
+        </td>
+        <td style="width: 55%">
+            <div class="details-Produit">
+                <div ng-show="nomProduit"><p class="text-header-Style">{{nomProduit}}</p></div>
+                    <div ng-show="imagesProduits" class="innerSlideProduit">
+                        <slider images="imagesProduits"  > </slider> 
+                    </div> 
+                <div ng-show="qrcodeProduit" > <img class="qrcode-produit" src="{{qrcodeProduit}}" alt="qrcode produit" /></div> 
+
+            </div>
+        </td>
+    </tr>
+    <tfoot>
+        <td colspan="2">
+           <div class="details-activity-foot">
+              <div class="detail-activity-tab-items" id="bottom0">
+                    <span><img src="img/keyboard/touch_left.png" class="touch-pad" />
+                        Pour revenir à l'activité</span>
+                </div>
+               <div class="detail-activity-tab-items" id="bottom1">
+                  <span><img src="img/keyboard/touch_up.png" class="touch-pad" />
+                     <img src="img/keyboard/touch_down.png" class="touch-pad" /> 
+                     Pour selectionner un article</span>
+               </div>
+                <div class="detail-activity-tab-items" id="bottom2">
+                    <span><img src="img/keyboard/touch_right.png" class="touch-pad" />
+                        Pour ajouter un article dans le panier</span>
+                </div>
+                <div class="detail-activity-tab-items" id="bottom3">
+                    <span><img src="img/keyboard/touch_correction.png" class="touch-ok" />
+                        Pour annuler une selection</span>
+                </div>
+                <div class="detail-activity-tab-items" id="bottom4">
+                    <span><img src="img/keyboard/touch_ok.png" class="touch-ok" />
+                        Pour effectuer valider la commande</span>
+                </div>
+            </div>
+        </td>
+    </tfoot>
+</table>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div ng-controller="ServicesListController" > 
+ <div class="top">
+		<div>
+			<img   class="logotype"  ng-src="{{ path }}" alt=""/>
+		</div>
+    </div>
+<div id="divAct" class="ecran-act animated bounceInRight">
+    <table  class="list-activity-tab " >
+         <tbody>
+            <tr  >
+                  <td  colspan="3" >
+                     <div  ng-repeat="item in items| startFrom:currentPage * itemsPerPage | limitTo:itemsPerPage " class="list-activities">
+                        <div class="activite animated zoomIn" id="act{{$index}}" >
+                            <span class="content-text-act">
+                                   {{item.name}} 
+                            </span>
+                            <div>
+                                <img class="activite-img" ng-src="img/activities/img_a_{{item.id}}_1.jpg" alt="" />
+                            </div><div>
+                            <img   class="touch-pad"  ng-src="img/keyboard/touch_{{(items.indexOf(item)  % 4) +1}}.png" alt="Touch"/>
+                            </div>
+                        </div>
+                     </div>
+                </td>
+            </tr>
+        </tbody>
+       <tfoot>
+        <td  width="30%">
+            <div class="pagination-custom "  ><ul style="text-align: left; color: #ffffff">  
+                    <li ng-class="{disabled:  currentPage === 0}">
+                        <img src="img/keyboard/touch_left.png" class="touch-pad" alt=" " /> Préc 
+                    </li> </ul> 
+            </div>
+
+        </td>
+        <td width="40%">   
+        </td>
+        <td width="30%">                   
+            <div class="pagination-custom "><ul style="text-align: right; color: #ffffff">
+                    <li ng-class="{disabled: currentPage >= (numberOfPages()-1)}">
+                         Suiv <img src="img/keyboard/touch_right.png"  class="touch-pad"  alt=" "/>  
+                    </li>
+                </ul>
+            </div>
+        
+        </td>
+        </tfoot>
+  
+    </table>
+ </div>               
+    <div class="bottom">
+        <marquee  class="textderoulant"> Sélectionnez un chiffre au clavier</marquee>
+    </div>
+ 
+
+ 
+</div>

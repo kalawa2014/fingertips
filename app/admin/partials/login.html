@@ -1,0 +1,26 @@
+<div ng-controller="LoginController" class="boxlogin" >
+
+	<form>
+		<table >
+			<tr >
+				<td>Email</td>
+				<td><input type="text" ng-model="user.login"  class="tablerow"/></td>
+			</tr>
+			<tr >
+				<td class="tablerow">Password</td>
+				<td ><input type="password" ng-model="user.passws" class="tablerow" /></td>
+			</tr>
+			<tr  class="tablerow">
+				<td colspan="2"  class="btnlogin">
+					<button type="button" class="btn btn-danger btn-xs btnlogin"  ng-click="connect()" >Connexion</button>
+					<button type="button" class="btn btn-danger btn-xs btnlogin"  ng-click="" >Annuler</button>
+				</td>
+			</tr>
+			<tr class="tablerow">
+				<td colspan="2">
+					<p class="errorMsg"> {{message}}</p>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>

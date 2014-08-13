@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>FingerTips</title>
+		<script type="text/javascript" >
+			function randomNum(){
+				var num = Math.floor(Math.random() * 10000 + 1);
+				return num
+			}
+			function loadStyleSheet( path) {
+				var head = document.getElementsByTagName( 'head' )[0]
+				var num=randomNum();
+				link = document.createElement( 'link' );
+				link.setAttribute( 'href', path+"?"+num );
+				link.setAttribute( 'rel', 'stylesheet' );
+				link.setAttribute( 'type', 'text/css' );
+				head.appendChild(link);
+			}
+		</script>
+        <!--<link rel="stylesheet" href="css/app.css<script type='text/javascript'>alert(1232);</script>"  >-->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/overcast/jquery-ui.css" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+
+        <script src="js/lib/angular/angular.js" ></script>
+        <script src="js/lib/angular-route/angular-route.js" ></script>
+        <script src="js/lib/angular-resource/angular-resource.js" ></script>
+        <script src="js/lib/angular-animate/angular-animate.min.js"></script>
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/lib/ng-grid.debug.js"></script>
+        <script src="js/lib/ui-bootstrap-tpls-0.10.0.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+    </head >
+    <body  ng-controller="AnyKeyPressedEventCtrl" ng-keyup="onKeyPress($event)" onload="loadStyleSheet( 'css/app.css' )" >
+          <div ng-view  >
+            </div>
+
+    </body>
+</html>
+<!--//TODO: integer le projet slim
+// integer le projet php dans le repertoire api
+// creer les services dans api
+//creer les services dans angular js
+//objectif afichier les activités et router vers les détails-->

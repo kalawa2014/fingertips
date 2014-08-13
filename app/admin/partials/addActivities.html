@@ -1,0 +1,52 @@
+<div ng-controller="AddActivityController">
+<div class="container">
+  	<form ng-submit="createActivity()" >
+		<table class="add-act-class">
+			<tr>
+				<td>
+					Intitulé 
+				</td>
+				<td>		
+					<input ng-model="activity.name" type="text" value="" />
+				</td>
+			</tr>
+			<tr> 
+				<td>Détails </td>
+				<td><textarea  ng-model="activity.details" rows="3" cols="30" ></textarea>   </td>
+			</tr>
+			<tr>
+				<td>Raccourcis clavier</td>
+				<td>
+					<select ng-model="activity.keyboard" 	size="1" >
+						<Option>A<Option>B<Option>C<Option>D<Option>E<Option>F<Option>G<Option>H<Option>I<Option>J<Option>K<Option>L<Option>M<Option>N
+						<Option>O<Option>P<Option>Q<Option>R<Option>S<Option>T<Option>U<Option>V<Option>W<Option>X<Option>Y<Option>Z
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Site internet </td>
+				<td><input ng-model="activity.more" type="text"   />
+				<input ng-model="activity.id_user"  type="hidden"/>
+				</td>
+			</tr>
+
+		<tr>
+			<td></td>
+			<td   >
+				<button   class="btn btn-lg">Sauver</button>
+			</td>
+		</tr>
+				<tr>
+			<td colspan="2" >
+			<div   >
+				<a href="openAddActFile()" class="btn btn-lg btn-success"  visibility="false" >Ajouter des images</a>
+			</div>
+			<td>
+		</tr>
+		</table>
+		
+	</form>
+	<a href="" ng-click="goMenu()" >Retour</a>
+</div>
+
+</div>

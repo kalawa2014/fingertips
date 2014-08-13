@@ -1,0 +1,45 @@
+<div ng-controller="AddUsersCtrl">
+<div class="container">
+  	<form ng-submit="addUser()" >
+		<table class="add-act-class">
+			<tr>
+				<td>
+					Adresse Mail 
+				</td>
+				<td>		
+					<input ng-model="user.mail" type="text" value="" />
+				</td>
+			</tr>
+			<tr> 
+				<td>Nom </td>
+				<td><input  ng-model="user.login" type="text" value="" />   </td>
+			</tr>
+			<tr>
+				<td>Mot de passe</td>
+				<td><input  ng-model="user.passwd1" type="text" value="" />   </td>
+			</tr>
+			<tr>
+				<td>Confirmation Mot de passe</td>
+				<td><input  ng-model="user.passwd" type="text" value="" />   </td>
+			</tr>
+
+			<tr>
+				<td>Type utilisateur</td>
+				<td>
+					<select ng-model="use.type" size="1"><option value="0">Client <Option value="1"> Administrateur</select>
+				</td>
+			</tr>
+
+		<tr>
+			<td></td>
+			<td   >
+				<button   class="btn btn-lg">Creer</button>
+			</td>
+		</tr>
+		</table>
+		
+	</form>
+	<a href="" ng-click="goMenu()" >Retour</a>
+</div>
+
+</div>

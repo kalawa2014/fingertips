@@ -1,0 +1,28 @@
+<div ng-controller="DelActiviteCtrl">
+                        <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="30%">Activités</th>
+								<th width="40%"></th>
+                                 <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="activity in activities">
+                                <td width="30%">
+									<strong>{{ activity.name }}</strong><br>
+									<img alt="" src="../img/keyboard/{{activity.type}}.png" height="20%" width="25%" />
+									<img alt="" src="../img/activities/img_a_{{activity.id}}_1.jpg" height="27%" width="45%" />     
+                               </td>
+							   <td width="40%"> <p>{{activity.details}}</p>
+							   </td>
+                                <td nowrap>
+                                    <button type="button" class="btn btn-danger btn-xs"  ng-click="removeActivity(index, activity.id )" ng-confirm-click="Vous souhaitez supprimer l'activité  {{activity.name}} de type  {{activity.type}} ">
+                                        <span class="glyphicon glyphicon-trash"></span> Supprimer
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+</div>
+<a href ng-click="goMenu()" >Retour</a>

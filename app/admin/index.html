@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAdminApp">
+    <head>
+        <title>Administration Fingertips</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/app.css?d=<?php echo date('dm'); ?>" media="screen">
+   <!--          <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/overcast/jquery-ui.css" />
+     <!--      <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">-->
+		    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+-->
+        <!-- Fix for old browsers -->
+		<script src="js/lib/es5-shim.min.js"></script>
+        <script src="js/lib/es5-sham.min.js"></script>
+        <script src="js/lib/jquery-1.8.3.min.js"></script>
+
+        <!--<script src="../bower_components/angular/angular.js"></script>
+        <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>-->
+		<script src="../js/lib/jquery.js"></script>
+        <script src="../js/lib/angular/angular.js" ></script>
+        <script src="../js/lib/angular-route/angular-route.js" ></script>
+        <script src="../js/lib/angular-resource/angular-resource.js" ></script>
+        <script src="../js/lib/angular-animate/angular-animate.min.js"></script>
+  <!--      <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script> -->
+       <script src="../js/lib/ui-bootstrap-tpls-0.10.0.js"></script>
+        <script src="js/lib/angular-file-upload/angular-file-upload.js"></script>
+		<script src="js/lib/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+		<!--<script src="js/filters.js"></script>
+        --><script src="js/services.js"></script>
+        <script src="js/directives.js"></script>
+      
+    </head>
+    <body  ng-controller="LoginController" >
+        <h1>Administration Fingertips </h1>
+		<div check-user=""  ng-if="UserService.isLogged" class="logout"><a href="" ng-click="deconnect()">Déconnecter {{UserService.username}}</a></div>
+        <div ng-view onload="routeMethods()">
+         </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+
+<div ng-controller="DelSlidesCtrl">
+                        <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="50%">Name</th>
+                                 <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="slide in slides">
+                                <td>
+                                    <strong>{{ slide.path }}</strong>
+                                    <!--<div ng-show="uploader.isHTML5" ng-thumb="{ file: slide.path, height: 100 }"></div>-->
+									<img alt="" src="../{{slide.path}}" height="20%" width="18%" />
+
+                                </td>
+                                <td nowrap>
+                                    <button type="button" class="btn btn-danger btn-xs"  ng-click="removeSlide( $index )">
+                                        <span class="glyphicon glyphicon-trash"></span> Supprimer
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+</div>
+<a href="" ng-click="goMenu()" >Retour</a>
